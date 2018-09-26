@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="ext.css">
+</head>
+<body>
+<ul>
+  <li><a  href="globalPage.php">Home</a></li>
+  <li><a href="imagemap.php">Global keepers</a></li>
+  <li><a href="pro.php">Profile</a></li>
+   <li><a href="videos.php">Videos</a></li>
+  <ul style="float:right;list-style-type:none;">
+<?php
+$con=mysqli_connect('localhost','root','','globalkeepers');
+$qry="select * from signup where login=1";
+$res=mysqli_query($con,$qry);
+if(mysqli_num_rows($res)>0)
+{
+    echo "<li><a  href='logout.php'>Logout</a></li>";
+}
+else {
+    echo "<li><a  href='login.php'>Login</a></li>";
+}
+?>
+    <li><a href="signupform.php">Sign Up</a></li>
+  </ul>
+</ul>
+
+
+
+</body>
+</html>

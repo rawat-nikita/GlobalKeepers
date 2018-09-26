@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="ext.css">
+</head>
+<body>
+
+<header>
+<img src="Global Keepers (2).png"  style="width:600px ; height:180px; margin-left:20px;">
+<article>
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <img class="slideimg"src="0.jpeg" >
+</div>
+
+<div class="mySlides fade">
+  <img class="slideimg" src="1.jpeg" >
+</div>
+
+<div class="mySlides fade">
+  <img class="slideimg" src="2.jpeg" >
+</div>
+
+<div class="mySlides fade">
+  <img class="slideimg" src="3.jpeg" >
+</div>
+
+<div class="mySlides fade">
+  <img class="slideimg" src="4.jpeg"  >
+</div>
+
+<div class="mySlides fade">
+  <img class="slideimg" src="5.jpeg" >
+</div>
+
+<div class="mySlides fade">
+  <img class="slideimg" src="6.jpeg" >
+</div>
+
+<div class="mySlides fade">
+  <img class="slideimg" src="7.jpeg" >
+</div>
+
+<div class="mySlides fade">
+  <img class="slideimg" src="8.jpeg" >
+</div>
+
+<div class="mySlides fade">
+  <img class="slideimg" src="9.jpeg" >
+</div>
+
+<div class="mySlides fade">
+  <img class="slideimg" src="10.jpeg" >
+</div>
+
+<div class="mySlides fade">
+  <img class="slideimg" src="11.jpeg" >
+</div>
+
+<div class="mySlides fade">
+  <img class="slideimg" src="13.jpeg"  >
+</div>
+
+<div class="mySlides fade">
+  <img class="slideimg" src="14.jpeg" >
+</div>
+
+<div class="mySlides fade">
+  <img class="slideimg" src="15.jpeg" >
+</div>
+
+<div class="mySlides fade">
+  <img class="slideimg" src="16.jpeg"  >
+</div>
+
+<div class="mySlides fade">
+  <img class="slideimg" src="17.jpeg" >
+</div>
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span>
+  <span class="dot"></span> 
+  <span class="dot"></span>
+  <span class="dot"></span>  
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex> slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+</article>
+</header>
+
+<div id="d1"></div>
+<div id="d2"></div>
+<div id="d3"></div>
+<div id="d4"></div>
+<div id="d5"></div>
+<div id="d6"></div>
+<div id="d7"></div>
+<div id="d8"></div>
+<div id="d9"></div>
+<div id="d10"></div>
+<div id="d11"></div>
+<div id="d12"></div>
+<div id="d13"></div>
+<div id="d14"></div>
+<div id="d15"></div>
+<div id="d16"></div>
+<div id="d17"></div>
+<br><br>
+
+</body>
+</html>

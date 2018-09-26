@@ -1,0 +1,168 @@
+<!DOCTYPE html>  
+<html lang="en"><head> 
+<style>
+form
+{
+position:center; 
+//margin-left:160px; 
+background-color:yellow;
+width:700px;
+//border:2px double black;
+//border-radius:30px
+}
+</style> 
+<meta charset="utf-8">  
+<title>JavaScript Form Validation </title>   
+<link rel='stylesheet' href='js-form-validation.css' type='text/css' />  
+<script src="registration-form-validation.js"></script>  
+</head>  
+
+<body onload="document.registration.userid.focus();">  
+<center>
+<h1>Registration Form</h1>  
+<p>Use tab keys to move from one input field to the next.</p>  
+<form name='registration' onSubmit="return formValidation();">  
+<fieldset style="border-radius:30px;"
+<legend>Registration form</legend> 
+<ul>  
+<li><label for="username">Name:</label></li>  
+<li><input type="text" name="username" size="50" /></li>  
+<li><label for="address">Address:</label></li>  
+<li><input type="text" name="address" size="50" /></li>  
+<li><label for="country">Country:</label></li>  
+<li><select name="country">  
+<option selected="" value="Default">(Please select a country)</option>  
+<option value="AF">Australia</option>  
+<option value="AL">Canada</option>  
+<option value="DZ">India</option>  
+<option value="AS">Russia</option>  
+<option value="AD">USA</option>  
+</select></li>   
+<li><label for="email">Email:</label></li>  
+<li><input type="text" name="email" size="50" /></li>  
+<li><label id="gender">Sex:</label></li>  
+<li><input type="radio" name="msex" value="Male" /><span>Male</span></li>  
+<li><input type="radio" name="fsex" value="Female" /><span>Female</span></li>  
+<li><label>Language:</label></li>  
+<li><input type="checkbox" name="en" value="en" checked /><span>English</span></li>  
+<li><input type="checkbox" name="nonen" value="noen" /><span>Non English</span></li>  
+<li><label for="desc">About:</label></li>  
+<li><textarea name="desc" id="desc"></textarea></li>  
+<li><input type="submit" name="submit" value="Submit" /></li>  
+</ul> 
+</fieldset>
+</form>
+</center>
+<script>
+function formValidation()
+{
+var uname = document.registration.username;
+var uadd = document.registration.address;
+var ucountry = document.registration.country;
+var uemail = document.registration.email;
+var umsex = document.registration.msex;
+var ufsex = document.registration.fsex; if(userid_validation(uid,5,12))
+{
+if(allLetter(uname))
+{
+if(alphanumeric(uadd))
+{ 
+if(countryselect(ucountry))
+{
+if(ValidateEmail(uemail))
+{
+if(validsex(umsex,ufsex))
+{
+}
+} 
+}
+} 
+}
+}
+}
+}
+return false;
+} 
+
+function allLetter(uname)
+{ 
+var letters = /^[A-Za-z]+$/;
+if(uname.value.match(letters))
+{
+return true;
+}
+else
+{
+alert('Username must have alphabet characters only');
+uname.focus();
+return false;
+}
+}
+function alphanumeric(uadd)
+{ 
+var letters = /^[0-9a-zA-Z]+$/;
+if(uadd.value.match(letters))
+{
+return true;
+}
+else
+{
+alert('User address must have alphanumeric characters only');
+uadd.focus();
+return false;
+}
+}
+function countryselect(ucountry)
+{
+if(ucountry.value == "Default")
+{
+alert('Select your country from the list');
+ucountry.focus();
+return false;
+}
+else
+{
+return true;
+}
+}
+function ValidateEmail(uemail)
+{
+var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+if(uemail.value.match(mailformat))
+{
+return true;
+}
+else
+{
+alert("You have entered an invalid email address!");
+uemail.focus();
+return false;
+}
+} 
+function validsex(umsex,ufsex)
+{
+x=0;
+
+if(umsex.checked) 
+{
+x++;
+} if(ufsex.checked)
+{
+x++; 
+}
+if(x==0)
+{
+alert('Select Male/Female');
+umsex.focus();
+return false;
+}
+else
+{
+alert('Form Succesfully Submitted');
+window.location.reload()
+return true;
+}
+}
+</script>
+</body>
+ </html>  

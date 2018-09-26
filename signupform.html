@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+<style>
+input
+{
+//align:center;
+position:relative;
+margin-left:200px;
+padding:5px;
+border:2px solid grey;
+}
+
+form
+{
+width:800px;
+font-size:20px;
+//margin-left:200px;
+
+}
+fieldset
+{
+border:10px solid #009999;
+margin:5px;
+
+}
+.frm
+{
+border: 5px solid black;
+width:800px;
+}
+</style>
+</head>
+<body >
+<?php 
+include('header.html');
+include('nav.html');
+?>
+<center>
+<br>
+<br>
+<div class="frm">
+<form action="sign_up.php" method="POST" >
+<fieldset>
+<legend><h1><center>SIGN UP</center></h1></legend>
+First Name : 
+<input type="text" name="fname" size="40px" required ><br><br>
+Last Name : 
+<input type="text" name="lname" size="40px" required><br><br>
+Age :
+<input type="number" name="age" required><br><br>
+Gender : 
+<input type="radio" name="gender" value="m" required> Male 
+<input type="radio" name="gender" value="f" required>Female<br><br> 
+Country : 
+<select default="" name="country">
+<option value="in">India</option>
+<option value="aus">Australia</option>
+<option value="us">USA</option>
+</select><br><br>
+About : 
+<textarea rows="4" col="150" name="about" style="margin-bottom:-50px" ></textarea><br><br><br>
+E-Mail ID : 
+<input type="text" name="email" id="mail" size="40px" value="" required onblur="check()">
+<span id="msg" > </span><br><br>
+Enter password : <input type="text" size="40px" name="pword" ><br><br>
+Confirm password : <input type="text" size="40px" name="cpword" onblur="check2()"><br><br>
+<span id="msg2"></span>
+<input type="submit" value="SUBMIT" onclick="function checkOnSubmit()">
+</fieldset>
+</form>
+</div>
+<br>
+</center>
+<script>
+var g;
+function check()
+{
+var x=document.getElementById("mail").value;
+var y=document.getElementById("mail").value.length;
+var z=x.indexOf("@");
+var zer=x.indexOf(".");
+var m=x.lastIndexOf("@");
+var n=x.lastIndexOf(".");
+if(z==0 ||z==y-1||zer==0||zer==y-1||z<0 || zer<0 ||m!=z )
+{
+document.getElementById("msg").innerHTML="Invalid Email ID";
+g="false";
+}
+else
+{
+document.getElementById("msg").innerHTML=" ";
+}
+}
+function check2()
+{
+var p1=document.getElementByName("pword");
+var p2=document.getElementByName("cword");
+if(p1!=p2)
+{
+document.getElementById("msg2")="Incorrect Password";
+}
+}
+function checkOnSubmit(){
+if(g=="false")
+{
+
+}
+}
+</script>
+<?php
+include('footer.html');
+?>
+</body>
